@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements IDrinkLoadListene
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
         recyclerDrink.setLayoutManager(gridLayoutManager);
         recyclerDrink.addItemDecoration(new SpaceItemDecoration());
+
+        btnCart.setOnClickListener(v -> startActivity(new Intent(this,CartActivity.class)));
     }
 
     @Override
